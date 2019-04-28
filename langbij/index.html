@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Language Bijection</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="encode.js"></script>
+  <link rel="stylesheet" href="../transform.css"/>
+</head>
+<body>
+  <h1>Language Bijection</h1>
+
+  <p><em>Human-readable binary encoding to Hangul inspired by BaseHangul.</em></p>
+
+  <h2>Everything to Binary</h2>
+  <form onsubmit="handleDecode(); return false">
+    <textarea id="decodeInput">iro ha nihoheto&#10;tirinuru uo&#10;ua ka io tare so&#10;tune naramu&#10;uui no okuiama&#10;kehu koete&#10;asaki iume misi&#10;ehi mo sesu</textarea>
+    <select id="decodeMethod" name="decodeMethod">
+      <option value="japanese" selected label="Japanese">Japanese</option>
+      <option value="hangul" label="Hangul">Hangul</option>
+      <option value="utf8" label="UTF-8">UTF-8</option>
+    </select>
+    <input type="submit" value="Decode"/>
+    <textarea id="decodeOutput"></textarea>
+  </form>
+
+  <h2>Binary to Everything</h2>
+  <form onsubmit="handleEncode(); return false">
+    <textarea id="encodeInput"></textarea>
+    <select id="encodeMethod" name="encodeMethod">
+      <option value="hangul" selected label="Hangul">Hangul</option>
+      <option value="japanese" label="Japanese">Japanese</option>
+      <option value="utf8" label="UTF-8">UTF-8</option>
+    </select>
+    <input type="submit" value="Encode"/>
+    <textarea id="encodeOutput" readonly></textarea>
+  </form>
+
+  <h2>Transliteration of Hangul</h2>
+  <form onsubmit="handleTranslit(); return false">
+    <textarea id="translitInput"></textarea>
+    <input type="submit" value="Translit"/>
+    <textarea id="translitOutput" readonly></textarea>
+  </form>
+
+  <footer>
+    <p><a href="rule.html">编码规则</a></p>
+    <p><footer><a href="hangul.html">Hangul (Beta)</a></p>
+  </footer>
+</body>
+</html>
